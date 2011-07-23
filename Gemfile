@@ -15,7 +15,7 @@ gem 'rspec'
 gem 'rspec-rails'
 gem 'spark'
 gem 'launchy'
-
+gem 'haml-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
