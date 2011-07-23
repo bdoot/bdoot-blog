@@ -1,0 +1,14 @@
+%h2
+  =@post.title
+
+.post_meta
+  .post_author
+    written by
+    =@post.author.name
+  .post_date
+    on
+    =@post.published_on.strftime "%B %d, %Y"
+
+.body_post
+  =@post.body
+
