@@ -2,9 +2,14 @@ BdootBlog::Application.routes.draw do
   get "posts/index"
 
   get "post/:id" => "posts#show"
-  get "posts/create" => "posts#create"
 
+  #get "posts/edit/:id" => "posts#edit"
+  match "posts/edit/:id" => "posts#edit"
+
+  get "posts/create" => "posts#create"
   post "posts/create" => "posts#create"
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,15 @@
+=form_for @post, :url => "/posts/#{@post.new_record? ? "create" : "edit/#{@post.id}"}", :method => :post do |form|
+  %div
+    =form.label :title
+    =form.text_field :title
+  %div
+    =form.label :body
+    =form.text_area :body
+  %div
+    =form.label :author_id
+    =form.select :author_id, User.all.map { |user| [user.name, user.id] }
+  %div
+    =form.label :published_on
+    =form.text_field :published_on
+  %div
+    =submit_tag "Save Post"
