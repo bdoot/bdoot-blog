@@ -47,3 +47,15 @@ Feature: Post Management & Display
     And I should see "This is my new post."
     And I should see "Brandon Doot"
     And I should see "November 24, 2010"
+
+ Scenario: Delete Post
+    Given I have a blog post
+    And my post has title "My Post"
+    And my post has body "This is my post"
+    And my post has author with name "Brandon Doot"
+    And my post was published on "November 23, 2008"
+    When I delete the post
+    Then I should not see "My Post"
+    And I should not see "This is my post"
+    And I should not see "Brandon Doot"
+    And I should not see "November 23, 2008"

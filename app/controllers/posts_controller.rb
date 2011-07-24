@@ -20,14 +20,16 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find_by_id params[:id]
-    puts "edit post" if request.post?
-    puts "edit put" if request.put?
-    puts "edit get" if request.get?
 
-    unless request.get?
+    unless request.get? || @post.nil?
       if @post.update_attributes params[:post]
         redirect_to "/post/#{@post.id}"
       end
     end
+  end
+
+  def destroy
+    Post.destroy params[:id]
+    redirect_to '/'
   end
 end

@@ -10,3 +10,7 @@ end
 When /^I edit the post$/ do
   visit "/posts/edit/#{@post.id}"
 end
+
+When /^I delete the post$/ do
+  visit "/posts/destroy/#{@post.id}"
+end

@@ -6,6 +6,8 @@ BdootBlog::Application.routes.draw do
   #get "posts/edit/:id" => "posts#edit"
   match "posts/edit/:id" => "posts#edit"
 
+  match "posts/destroy/:id" => "posts#destroy"
+
   get "posts/create" => "posts#create"
   post "posts/create" => "posts#create"
 
